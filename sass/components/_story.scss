@@ -13,6 +13,16 @@
     transform: skewX(12deg);
   }
 
+  @include response(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include response(phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -27,6 +37,15 @@
 
     position: relative;
     overflow: hidden;
+
+    @include response(phone) {
+      transform: translateX(-3rem) skewX(0);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      float: none;
+    }
   }
 
   &__img {
@@ -37,7 +56,9 @@
   }
 
   &__text {
-
+    @include response(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {
@@ -63,4 +84,5 @@
     transform: translateX(-4rem) scale(1);
     filter: blur(0.3rem) brightness(80%);
   }
+
 }
